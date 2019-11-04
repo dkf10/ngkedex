@@ -1,0 +1,16 @@
+<header>
+  <ngkx-header></ngkx-header>
+  <ngkx-alert></ngkx-alert>
+</header>
+<main>
+  <router-outlet></router-outlet>
+  <ngx-spinner
+    bdOpacity = 0.6
+    bdColor = "rgba(0,0,0,0.66)"
+    size = "large"
+    color = "#fff"
+    type = "line-spin-clockwise-fade"
+    [fullScreen] = "true">
+    <p style="color: white" > </p>
+  </ngx-spinner>
+</main>
