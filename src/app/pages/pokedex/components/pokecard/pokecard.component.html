@@ -1,0 +1,18 @@
+<div class="card pokecard">
+    <img src="assets/img/pokemon/{{pokemonId}}.png" class="card-img-top" alt="Pokemon sprite">
+    <div class="card-body">
+        <hr class="my-2">
+        <h3 class="card-title text-capitalize font-weight-light mt-2 mb-0">{{pokemonName}}</h3>
+
+    </div>
+    <div class=card-footer>
+        <div class="row">
+            <div class="col-7">
+                <a class="btn btn-block btn-outline-ngkx text-uppercase font-weight-bold" href="" (click)="viewPokemon($event)">details</a>
+            </div>
+            <div class="col-5 text-right font-weight-bold lh-30">
+                #{{pokemonId}}
+            </div>
+        </div>
+    </div>
+</div>

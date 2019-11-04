@@ -1,0 +1,21 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.pokecard {
+  border-radius: 0;
+
+  &:hover {
+    background-color: $very-light-black;
+    transition: $light-transition;
+  }
+
+  .card-footer {
+    .btn {
+      font-size: $font-size-small;
+      border-radius: 0;
+    }
+
+    .lh-30 {
+      line-height: 30px;
+    }
+  }
+}

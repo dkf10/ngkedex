@@ -1,0 +1,31 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-12 text-uppercase font-weight-bold">Pokémon number: {{countedPokemon}}
+            <hr class="my-2">
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let item of pokemon" class="col-6 col-xl-3 col-md-4 col-sm-6 col-xs-6 my-2">
+            <ngkx-pokecard [pokemonName]="item.name" [pokemonUrl]="item.url"></ngkx-pokecard>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr class="mt-2 mb-3">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" [ngClass]="{'disabled': !prevPgUrl}">
+                        <a class="page-link text-uppercase font-weight-bold" href="#" (click)="doNavigate($event, false)">
+                            Previous
+                        </a>
+                    </li>
+                    <li class="page-item" [ngClass]="{'disabled': !nextPgUrl}">
+                        <a class="page-link text-uppercase font-weight-bold" href="#"(click)="doNavigate($event, true)">
+                            Next
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
