@@ -1,0 +1,28 @@
+@import "./assets/styles/variables.scss";
+
+a, button {
+  outline: none !important;
+}
+
+.btn-outline-ngkx {
+  color: $ngkx-dark-blue;
+  border-color: $ngkx-dark-blue;
+
+  &:hover {
+    background-color: $ngkx-red;
+    border-color: $ngkx-dark-blue;
+    color: white;
+  }
+}
+
+.page-link {
+  color: $ngkx-dark-blue;
+  border-color: $ngkx-dark-blue;
+  border-radius: 0px !important;
+  
+  &:hover {
+    background-color: $ngkx-red;
+    border-color: $ngkx-dark-blue;
+    color: white;
+  }
+}
