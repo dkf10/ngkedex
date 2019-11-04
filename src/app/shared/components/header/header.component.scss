@@ -1,0 +1,44 @@
+@import "../../../../assets/styles/variables.scss";
+
+.bg-red {
+  background: {
+    color: $ngkx-red !important;
+  }
+}
+
+.bg-dark {
+  background: {
+    color: $ngkx-dark-blue !important;
+  }
+}
+
+nav {
+  height: 70px;
+  padding: 0px 25px;
+  border-bottom: 5px solid $ngkx-red;
+
+  .navbar-brand{
+    height: 100%;
+    line-height: 45px;
+  }
+
+  .navbar-toggler {
+    border: {
+      radius: 0;
+      color: transparent !important;
+    }
+
+    background: {
+      color: $ngkx-red !important;
+    }
+
+    height: 70px;
+    width: 70px;
+  }
+}
+
+.nav-link {
+  &.active {
+    color: rgba(255,255,255,0.4) !important;
+  }
+}

@@ -1,0 +1,28 @@
+<div class="pos-f-t">
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/pokeball.png" width="30" height="30">
+        </a>
+        <button class="navbar-toggler" type="button" [attr.aria-expanded]="!isCollapsed"
+            (click)="isCollapsed = !isCollapsed">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="collapse" [collapse]="isCollapsed" [isAnimated]="true">
+        <div class="bg-red p-4">
+            <div class="container navbar-nav text-center text-uppercase font-weight-bold">
+                <div class="row">
+                    <div role="menuitem" class="col-sm nav-item">
+                        <a routerLink="pokedex" class="text-white nav-link" routerLinkActive="active">Pokedex</a>
+                    </div>
+                    <div role="menuitem" class="col-sm nav-item">
+                        <a routerLink="news" class="text-white nav-link" routerLinkActive="active">News</a>
+                    </div>
+                    <div role="menuitem" class="col-sm nav-item">
+                        <a routerLink="about" class="text-white nav-link" routerLinkActive="active">About</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
