@@ -26,6 +26,12 @@ export class PokecardComponent implements OnInit {
 
   public viewPokemon($event: Event): void {
     $event.preventDefault();
-    this.router.navigateByUrl('/pokemon');
+
+    // preparing parameters to be passed to the pokemon detail page
+    let queryParams = {};
+    queryParams['pokemonId'] = this.pokemonId;
+    queryParams['pokemonName'] = this.pokemonName;
+
+    this.router.navigate(['pokemon'], { queryParams: queryParams });
   }
 }

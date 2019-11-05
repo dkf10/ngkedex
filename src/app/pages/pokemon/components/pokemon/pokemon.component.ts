@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ActivatedRoute } from '@angular/router';
 
 const spriteBasePath = environment.SPRITE_BASE_PATH;
 
@@ -9,20 +10,21 @@ const spriteBasePath = environment.SPRITE_BASE_PATH;
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
+  public pokemonName: string;
+  public pokemonId: string;
+  public flavorText: string = "No Pokémon selected.";
   public spritePic: string;
-  public flavorText: string;
-  
-  @Input("pokemonName") pokemonName: string;
-  @Input("pokemonId") pokemonId: string;
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
-    //TODO: REMOVE, MOCKED DATA
-    this.pokemonId = "1"; 
-    this.pokemonName = "Bulbasaur"
-    this.flavorText = "Bulbasaur can be seen napping in bright sunlight.\nThere is a seed on its back. By soaking up the sun’s rays,\nthe seed grows progressively larger."
-    
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.pokemonId = params['pokemonId'] || "0";
+      this.pokemonName = params['pokemonName'] || "-";
+    });
+
     this.spritePic = spriteBasePath + this.pokemonId + ".png";
   }
 
