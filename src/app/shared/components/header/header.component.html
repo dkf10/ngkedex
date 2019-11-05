@@ -3,12 +3,14 @@
         <a class="navbar-brand" href="#">
             <img src="assets/img/pokeball.png" width="30" height="30">
         </a>
-        <button class="navbar-toggler" type="button" [attr.aria-expanded]="!isCollapsed"
+        <!-- <button class="navbar-toggler red-squared-btn" type="button" [attr.aria-expanded]="!isCollapsed"
             (click)="isCollapsed = !isCollapsed">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> -->
+
+        <button class="red-squared-btn" type="button"><fa-icon [icon]="searchIcon"></fa-icon></button>
     </nav>
-    <div class="collapse" [collapse]="isCollapsed" [isAnimated]="true">
+    <!-- <div class="collapse" [collapse]="isCollapsed" [isAnimated]="true">
         <div class="bg-red p-4">
             <div class="container navbar-nav text-center text-uppercase font-weight-bold">
                 <div class="row">
@@ -24,5 +26,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

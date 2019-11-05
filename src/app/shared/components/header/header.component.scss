@@ -1,16 +1,5 @@
 @import "../../../../assets/styles/variables.scss";
 
-.bg-red {
-  background: {
-    color: $ngkx-red !important;
-  }
-}
-
-.bg-dark {
-  background: {
-    color: $ngkx-dark-blue !important;
-  }
-}
 
 nav {
   height: 70px;
@@ -22,7 +11,7 @@ nav {
     line-height: 45px;
   }
 
-  .navbar-toggler {
+  .red-squared-btn {
     border: {
       radius: 0;
       color: transparent !important;
@@ -32,6 +21,7 @@ nav {
       color: $ngkx-red !important;
     }
 
+    color: white;
     height: 70px;
     width: 70px;
   }
