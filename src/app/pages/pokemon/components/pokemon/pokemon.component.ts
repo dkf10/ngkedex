@@ -14,7 +14,7 @@ const spriteBasePath = environment.SPRITE_BASE_PATH;
 export class PokemonComponent implements OnInit {
   public pokemonName: string = "-";
   public pokemonId: string = "0";
-  public flavorText: string = "No Pokémon selected.";
+  public flavorText: string = "Work in progress.";
   public spritePic: string;
 
   constructor(
