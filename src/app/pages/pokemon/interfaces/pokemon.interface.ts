@@ -11,7 +11,8 @@ export interface PokemonInterface {
 
 export interface PAbility {
     name: string,
-    url: string
+    url: string,
+    isHidden: boolean
 }
 
 export interface PMove {
