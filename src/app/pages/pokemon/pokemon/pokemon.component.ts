@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 const spriteBasePath = environment.SPRITE_BASE_PATH;
 
 @Component({
-  selector: 'app-pokemon',
+  selector: 'ngkx-pokemon',
   templateUrl: './pokemon.component.html',
   styleUrls: ['./pokemon.component.scss']
 })
