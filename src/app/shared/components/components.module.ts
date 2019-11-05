@@ -5,19 +5,23 @@ import { AlertComponent } from './alert/alert.component';
 import { CollapseModule } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, AlertComponent],
+  declarations: [HeaderComponent, AlertComponent, FooterComponent],
   imports: [
     CommonModule,
     CollapseModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   exports: [
     HeaderComponent,
-    AlertComponent
+    AlertComponent,
+    FooterComponent
   ]
 })
 export class ComponentsModule { }

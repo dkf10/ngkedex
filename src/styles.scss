@@ -27,3 +27,15 @@ a, button {
     color: white;
   }
 }
+
+.bg-red {
+  background: {
+    color: $ngkx-red !important;
+  }
+}
+
+.bg-dark {
+  background: {
+    color: $ngkx-dark-blue !important;
+  }
+}

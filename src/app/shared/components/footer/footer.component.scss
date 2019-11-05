@@ -1,0 +1,9 @@
+@import "../../../../assets/styles/variables.scss";
+
+.footer {
+    border-top: 5px solid $ngkx-red;
+
+    .row {
+        margin: 0;
+    }
+}
