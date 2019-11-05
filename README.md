@@ -14,7 +14,6 @@ Data retrieved from the [PokéAPI](https://pokeapi.co/).
 npm install
 ```
 This will install all the dependencies described in the  `package.json` file.
-***
 
 
 ## Development server
@@ -24,7 +23,6 @@ npx ng serve
 ```
 to start the dev server in your local machine.  
 Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-***
 
 
 ## Code scaffolding
@@ -38,7 +36,6 @@ to generate a new component. You can also use
 ```
 npx ng generate directive|pipe|service|class|guard|interface|enum|module
 ```
-***
 
 
 ## Build
