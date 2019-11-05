@@ -5,7 +5,7 @@
 		<div class="media">
 			<div class="card">
 				<div class="card-body p-0">
-					<img class="align-self-start mr-3" src="assets/img/pokemon/{{pokemonId}}.png" height="255" width="255" alt="Pokemon sprite">
+					<img class="align-self-start mr-3" [src]="spritePic" height="255" width="255" alt="Pokemon sprite">
 				</div>
 				<div class="card-footer">
 					<div class="row">
@@ -16,11 +16,11 @@
 				</div>
 			</div>
 			<div class="media-body">
-				<h1 class="text-capitalize font-weight-light mx-4 mt-0">Bulbasaur</h1>
+				<h1 class="text-capitalize font-weight-light mx-4 mt-0">{{pokemonName}}</h1>
 				<hr class="my-3">
 				<div class="mx-4 description">
 					<span>
-						Bulbasaur can be seen napping in bright sunlight.\nThere is a seed on its back. By soaking up the sun’s rays,\nthe seed grows progressively larger.
+						{{flavorText}}
 					</span>					
 				</div>
 			</div>
