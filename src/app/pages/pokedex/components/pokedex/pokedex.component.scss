@@ -2,4 +2,6 @@
 
 .page-link {
     font-size: $font-size-small;
+    display: unset;
+    transition: $light-transition;
 }
