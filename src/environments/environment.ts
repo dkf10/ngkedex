@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  BASE_URL: "https://pokeapi.co/api/v2"
+  BASE_URL: "https://pokeapi.co/api/v2",
+  SPRITE_BASE_PATH: "assets/img/pokemon/"
 };
 
 /*

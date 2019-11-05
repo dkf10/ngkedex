@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+
+const spriteBasePath = environment.SPRITE_BASE_PATH;
 
 @Component({
   selector: 'ngkx-pokecard',
@@ -7,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./pokecard.component.scss']
 })
 export class PokecardComponent implements OnInit {
+  public spritePic: string;
 
   @Input("pokemonName") pokemonName: string;
   @Input("pokemonUrl") pokemonUrl: string;
@@ -17,6 +21,7 @@ export class PokecardComponent implements OnInit {
 
   ngOnInit() {
     this.pokemonId = this.pokemonUrl.split('/')[6];
+    this.spritePic = spriteBasePath + this.pokemonId + ".png";
   }
 
   public viewPokemon($event: Event): void {
