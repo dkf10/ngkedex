@@ -1,8 +1,8 @@
 export interface PokemonBaseInterface {
     baseExperience: string,
-    height: string,
+    height: number,
     name: string,
-    weight: string
+    weight: number
 }
 
 export interface PokemonAbilityInterface {

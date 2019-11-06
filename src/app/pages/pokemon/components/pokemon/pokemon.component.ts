@@ -51,9 +51,9 @@ export class PokemonComponent implements OnInit {
         console.log(response);
         this.loadedPokemonBase = {
           baseExperience: response.base_experience,
-          height: response.height,
+          height: response.height/10,
           name: response.name,
-          weight: response.weight
+          weight: response.weight/10
         };
 
         this.loadPokemonAbilities(response.abilities);
