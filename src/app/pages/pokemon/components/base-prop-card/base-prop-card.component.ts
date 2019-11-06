@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'ngkx-base-prop-card',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./base-prop-card.component.scss']
 })
 export class BasePropCardComponent implements OnInit {
+
+  @Input("prop") basePropTitle: string;
+  @Input("value") basePropValue: string;
 
   constructor() { }
 

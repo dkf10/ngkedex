@@ -1,4 +1,4 @@
-<div class="container my-4">
+  <div class="container my-4">
 	<div class="row">
 		<div class="media w-100">
 			<div class="card">
@@ -27,17 +27,28 @@
 					</div>
 					<div class="row pt-3" *ngIf="loadedPokemonBase">
 						<div class="col-3">
-							Base Experience: {{loadedPokemonBase.baseExperience}}
-							<ngkx-base-prop-card></ngkx-base-prop-card>
+							<ngkx-base-prop-card
+								prop="Base Experience"
+								[value]="loadedPokemonBase.baseExperience"
+							></ngkx-base-prop-card>
 						</div>
 						<div class="col-3">
-							Height: {{loadedPokemonBase.height}} m
+							<ngkx-base-prop-card
+								prop="Height (m)"
+								[value]="loadedPokemonBase.height"
+							></ngkx-base-prop-card>
 						</div>
 						<div class="col-3">
-							Weight: {{loadedPokemonBase.weight}} kg
+							<ngkx-base-prop-card
+								prop="Weight (kg)"
+								[value]="loadedPokemonBase.weight"
+							></ngkx-base-prop-card>
 						</div>
 						<div class="col-3">
-							Genera: {{loadedPokemonSpecies.genera}}
+							<ngkx-base-prop-card
+								prop="Genera"
+								[value]="loadedPokemonSpecies.genera"
+							></ngkx-base-prop-card>
 						</div>
 					</div>
 				</div>

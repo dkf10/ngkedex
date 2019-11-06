@@ -1,0 +1,19 @@
+@import "../../../../../assets/styles/variables.scss";
+
+.card {
+  border-radius: 0 !important;
+
+  .card-header {
+    background: {
+      color: $ngkx-semi-light-blue;
+		}
+		
+		border-radius: 0 !important;
+	}
+	
+	.card-body {
+		background: {
+      color: $ngkx-light-blue;
+    }
+	}
+}
