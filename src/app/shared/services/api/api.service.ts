@@ -19,16 +19,4 @@ export class ApiService {
       this.alertService.error("An error occurred. " + error);
     }
   }
-
-  
-  public async post<T>(url: string, body?: any, options?: any): Promise<any> {
-    try {
-      return this.httpClient
-        .post<any>(`${environment.BASE_URL}${url}`, body, options)
-        .toPromise();
-    }
-    catch (error) {
-      this.alertService.error("An error occurred. " + error);
-    }
-  }
 }
