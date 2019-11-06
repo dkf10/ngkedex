@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ApiService } from 'src/app/shared/services/api/api.service';
 import { PokedexInterface, Pokemon } from '../interfaces/pokedex.interface';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PokedexService {
 
   public async getPokedex(options?: any): Promise<PokedexInterface> {
     this.spinner.show();
-    return await this.apiService.get<PokedexInterface>('pokemon', options).then((response) => {
+    return await this.apiService.get<PokedexInterface>(`${environment.BASE_URL}/pokemon`, options).then((response) => {
       let result: PokedexInterface = null;
       let pokeArray: Pokemon[] = [];
 
@@ -35,9 +36,5 @@ export class PokedexService {
 
       return result;
     });
-  }
-
-  public async getPokemon(options?: any): Promise<any> {
-
   }
 }

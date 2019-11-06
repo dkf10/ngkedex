@@ -13,7 +13,7 @@ export class ApiService {
   public async get<T>(url: string, options?: any): Promise<any> {
     try {
       return this.httpClient
-        .get<any>(`${environment.BASE_URL}/${url}`, options)
+        .get<any>(`${url}`, options)
         .toPromise();
     } catch (error) {
       this.alertService.error("An error occurred. " + error);

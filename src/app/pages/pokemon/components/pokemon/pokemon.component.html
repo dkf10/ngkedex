@@ -17,8 +17,8 @@
 				<h1 class="text-capitalize font-weight-light mx-4 mt-0">{{pokemonName}}</h1>
 				<hr class="my-3">
 				<div class="mx-4 description">
-					<span>
-						{{flavorText}}
+					<span *ngIf="loadedPokemonSpecies">
+						{{loadedPokemonSpecies.flavorText}}
 					</span>					
 				</div>
 			</div>
@@ -27,7 +27,11 @@
 
 	<div class="row my-3">
 		<div class="col-12">
-			Work in progress.
+			base: {{loadedPokemonBase | json}}
+			<hr><br>species: {{loadedPokemonSpecies | json}}
+			<hr><br>abilities: {{loadedPokemonAbilities | json}}
+			<hr><br>stats: {{loadedPokemonStats | json}}
+			<hr><br>types: {{loadedPokemonTypes | json}}
 		</div>
 	</div>
 </div>
