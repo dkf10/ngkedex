@@ -18,4 +18,9 @@
       line-height: 30px;
     }
   }
+
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
