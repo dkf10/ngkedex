@@ -3,7 +3,8 @@
 		<div class="media w-100">
 			<div class="card">
 				<div class="card-body p-0">
-					<img class="align-self-start mr-3" [src]="spritePic" onerror="this.src='assets/img/pokemon/0.png';" height="255" width="255" alt="Pokemon sprite">
+					<img class="align-self-start mr-3" [src]="spritePic" onerror="this.src='assets/img/pokemon/0.png';"
+						height="255" width="255" alt="Pokemon sprite">
 				</div>
 				<div class="card-footer">
 					<div class="row">
@@ -17,9 +18,28 @@
 				<h1 class="text-capitalize font-weight-light mx-4 mt-0">{{pokemonName}}</h1>
 				<hr class="my-3">
 				<div class="mx-4 description">
-					<span *ngIf="loadedPokemonSpecies">
-						{{loadedPokemonSpecies.flavorText}}
-					</span>					
+					<div class="row">
+						<div class="col-12">
+							<span *ngIf="loadedPokemonSpecies">
+								{{loadedPokemonSpecies.flavorText}}
+							</span>
+						</div>
+					</div>
+					<div class="row pt-3" *ngIf="loadedPokemonBase">
+						<div class="col-3">
+							Base Experience: {{loadedPokemonBase.baseExperience}}
+							<ngkx-base-prop-card></ngkx-base-prop-card>
+						</div>
+						<div class="col-3">
+							Height: {{loadedPokemonBase.height}} m
+						</div>
+						<div class="col-3">
+							Weight: {{loadedPokemonBase.weight}} kg
+						</div>
+						<div class="col-3">
+							Genera: {{loadedPokemonSpecies.genera}}
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
