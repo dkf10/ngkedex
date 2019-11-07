@@ -43,7 +43,6 @@ export class PokemonComponent implements OnInit {
   private loadPokemon() {
     this.pokemonService.getPokemonBase(this.pokemonId).then((response) => {
       if (response) {
-        console.log(response);
         this.loadedPokemonBase = {
           baseExperience: response.base_experience,
           height: String(response.height / 10) + "m",
