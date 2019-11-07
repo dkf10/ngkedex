@@ -6,6 +6,7 @@ import { CollapseModule } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { SearchComponent } from 'src/app/pages/search/components/search/search.component';
 
 
 @NgModule({
