@@ -6,11 +6,10 @@ import { CollapseModule } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
-import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [HeaderComponent, AlertComponent, FooterComponent],
+  declarations: [HeaderComponent, AlertComponent],
   imports: [
     CommonModule,
     CollapseModule.forRoot(),
@@ -20,8 +19,7 @@ import { FooterComponent } from './footer/footer.component';
   ],
   exports: [
     HeaderComponent,
-    AlertComponent,
-    FooterComponent
+    AlertComponent
   ]
 })
 export class ComponentsModule { }
