@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
 import { pokemonRoutes } from './routes';
 import { BasePropCardComponent } from './components/base-prop-card/base-prop-card.component';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -11,6 +12,7 @@ import { BasePropCardComponent } from './components/base-prop-card/base-prop-car
   declarations: [PokemonComponent, BasePropCardComponent],
   imports: [
     CommonModule,
+    NgxSpinnerModule,
     RouterModule.forChild(pokemonRoutes)
   ]
 })

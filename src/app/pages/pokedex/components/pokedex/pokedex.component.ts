@@ -50,6 +50,7 @@ export class PokedexComponent implements OnInit {
   }
 
   private loadPokedex(options?: any): void {
+    this.spinner.show();
     this.pokedexService.getPokedex(options).then((response) => {
       if(response) {
         this.pokemon = response.results;

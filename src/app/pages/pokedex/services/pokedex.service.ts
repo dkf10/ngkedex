@@ -8,10 +8,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PokedexService {
-  constructor(private apiService: ApiService, private spinner: NgxSpinnerService) { }
+  constructor(private apiService: ApiService) { }
 
   public async getPokedex(options?: any): Promise<PokedexInterface> {
-    this.spinner.show();
     return await this.apiService.get<PokedexInterface>(`${environment.BASE_URL}/pokemon`, options).then((response) => {
       let result: PokedexInterface = null;
       let pokeArray: Pokemon[] = [];

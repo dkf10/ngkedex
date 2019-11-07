@@ -6,6 +6,7 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { pokedexRoutes } from './routes';
 import { PokecardComponent } from './components/pokecard/pokecard.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -14,7 +15,8 @@ import { PokecardComponent } from './components/pokecard/pokecard.component';
   imports: [
     CommonModule,
     RouterModule.forChild(pokedexRoutes),
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxSpinnerModule
   ]
 })
 export class PokedexModule { }

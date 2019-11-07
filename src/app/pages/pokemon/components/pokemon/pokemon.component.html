@@ -1,4 +1,16 @@
-  <div class="container my-4">
+<ngx-spinner
+	*ngIf="!(loadedPokemonBase && loadedPokemonAbilities && loadedPokemonSpecies && loadedPokemonStats && loadedPokemonTypes)"
+    bdOpacity = 0.6
+    bdColor = "rgba(0,0,0,0.66)"
+    size = "large"
+    color = "#fff"
+    type = "line-spin-clockwise-fade"
+    [fullScreen] = "true">
+    <p style="color: white" > </p>
+</ngx-spinner>
+
+
+<div class="container my-4" *ngIf="loadedPokemonBase && loadedPokemonAbilities && loadedPokemonSpecies && loadedPokemonStats && loadedPokemonTypes">
 	<div class="row">
 		<div class="media w-100">
 			<div class="card">
@@ -20,41 +32,40 @@
 				<div class="mx-4 description">
 					<div class="row">
 						<div class="col-12">
-							<span *ngIf="loadedPokemonSpecies">
+							<span>
 								{{loadedPokemonSpecies.flavorText}}
 							</span>
 						</div>
 					</div>
-					<div class="row pt-3" *ngIf="loadedPokemonBase">
-						<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
-							<ngkx-base-prop-card
-								prop="Exp"
-								[value]="loadedPokemonBase.baseExperience"
-							></ngkx-base-prop-card>
-						</div>
-						<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
-							<ngkx-base-prop-card
-								prop="Height"
-								[value]="loadedPokemonBase.height"
-							></ngkx-base-prop-card>
-						</div>
-						<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
-							<ngkx-base-prop-card
-								prop="Weight"
-								[value]="loadedPokemonBase.weight"
-							></ngkx-base-prop-card>
-						</div>
-						<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
-							<ngkx-base-prop-card
-								prop="Genera"
-								[value]="loadedPokemonSpecies.genera"
-							></ngkx-base-prop-card>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="row my-3 w-100">
+			<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
+				<ngkx-base-prop-card prop="Exp" [value]="loadedPokemonBase.baseExperience"></ngkx-base-prop-card>
+			</div>
+			<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
+				<ngkx-base-prop-card prop="Height" [value]="loadedPokemonBase.height"></ngkx-base-prop-card>
+			</div>
+			<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
+				<ngkx-base-prop-card prop="Weight" [value]="loadedPokemonBase.weight"></ngkx-base-prop-card>
+			</div>
+			<div class="col-6 col-xl-3 col-md-3 col-sm-6 col-xs-6 my-2">
+				<ngkx-base-prop-card prop="Genera" [value]="loadedPokemonSpecies.genera"></ngkx-base-prop-card>
+			</div>
+		</div>
+
+		<div class="row my-3">
+			<div class="col-12">
+
+			</div>
+		</div>
+	</div>
+
 
 	<div class="row my-3">
 		<div class="col-12">

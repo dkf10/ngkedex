@@ -14,17 +14,17 @@ const spriteBasePath = environment.SPRITE_BASE_PATH;
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  public pokemonName: string = "No Pokémon selected.";
-  public pokemonId: string = "0";
+  public pokemonName: string;
+  public pokemonId: string;
 
   public loadedPokemonBase: PokemonBaseInterface = null;
   public loadedPokemonSpecies: PokemonSpeciesInterface = null;
   public loadedPokemonAbilities: PokemonAbilityInterface[] = [];
   public loadedPokemonStats: PokemonStatInterface[] = [];
   public loadedPokemonTypes: string[] = [];
-  
+
   public spritePic: string;
-  
+
   constructor(
     private navigationService: NavigationService,
     private pokemonService: PokemonService,
@@ -34,26 +34,21 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit() {
     this.spinner.show();
-    
-    if (this.navigationService.paramsData) {
-      this.pokemonId = this.navigationService.paramsData['pokemonId'];
-      this.pokemonName = this.navigationService.paramsData['pokemonName'];
-      this.loadPokemon();
-    }
-    
+    this.pokemonId = this.navigationService.paramsData['pokemonId'];
+    this.pokemonName = this.navigationService.paramsData['pokemonName'];
     this.spritePic = spriteBasePath + this.pokemonId + ".png";
-    this.spinner.hide();
+    this.loadPokemon();
   }
 
   private loadPokemon() {
     this.pokemonService.getPokemonBase(this.pokemonId).then((response) => {
-      if(response) {
+      if (response) {
         console.log(response);
         this.loadedPokemonBase = {
           baseExperience: response.base_experience,
-          height: String(response.height/10)+"m",
+          height: String(response.height / 10) + "m",
           name: response.name,
-          weight: String(response.weight/10)+"kg"
+          weight: String(response.weight / 10) + "kg"
         };
 
         this.loadPokemonAbilities(response.abilities);
@@ -66,8 +61,8 @@ export class PokemonComponent implements OnInit {
     });
   }
 
-  
-  private loadPokemonAbilities (abilities: any): void {
+
+  private loadPokemonAbilities(abilities: any): void {
     for (let i: number = 0; i < abilities.length; i++) {
       this.pokemonService.getPokemonAbility(abilities[i].ability.url).then((resp) => {
         if (resp) {
@@ -78,15 +73,15 @@ export class PokemonComponent implements OnInit {
     }
   }
 
-  private loadPokemonSpecies (species: any): void {
+  private loadPokemonSpecies(species: any): void {
     this.pokemonService.getPokemonSpecies(species.url).then((resp) => {
       if (resp) {
         this.loadedPokemonSpecies = resp;
       }
-    });    
+    });
   }
 
-  private loadPokemonStats (stats: any): void {
+  private loadPokemonStats(stats: any): void {
     for (let i: number = 0; i < stats.length; i++) {
       let stat: PokemonStatInterface = null;
 
@@ -100,7 +95,7 @@ export class PokemonComponent implements OnInit {
     }
   }
 
-  private loadPokemonTypes (types: any): void {
+  private loadPokemonTypes(types: any): void {
     for (let i: number = 0; i < types.length; i++) {
       let currType = types[i];
 
