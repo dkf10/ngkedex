@@ -24,6 +24,8 @@
 							#{{pokemonId}}
 						</div>
 					</div>
+					<hr class="my-2">
+					<ngkx-types-card [types]="loadedPokemonTypes"></ngkx-types-card>
 				</div>
 			</div>
 			<div class="media-body">
@@ -73,7 +75,7 @@
 					<span class="text-uppercase font-weight-bold text-white mx-2 my-1">stats</span>
 				</div>
 				<div class="row bg-dark infobox-content">
-					Work in progress
+					<ngkx-stats-card></ngkx-stats-card>
 				</div>
 			</div>
 		</div>
@@ -82,7 +84,8 @@
 
 	<div class="row my-3">
 		<div class="col-12">
-			base: {{loadedPokemonBase | json}}
+			<hr><span class="display-4 text-uppercase">raw data</span>
+			<hr><br>base: {{loadedPokemonBase | json}}
 			<hr><br>species: {{loadedPokemonSpecies | json}}
 			<hr><br>abilities: {{loadedPokemonAbilities | json}}
 			<hr><br>stats: {{loadedPokemonStats | json}}
