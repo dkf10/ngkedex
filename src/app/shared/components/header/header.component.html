@@ -4,8 +4,12 @@
             <img src="assets/img/pokeball.png" width="30" height="30">
         </a>
         <div class="navbar-right">
-            <button class="red-squared-btn mx-1" type="button"><fa-icon [icon]="searchIcon"></fa-icon></button>
-            <button class="red-squared-btn mx-1" type="button"><fa-icon [icon]="infoIcon" routerLink="about"></fa-icon></button>
+            <button class="red-squared-btn mx-1" type="button" routerLink="search">
+                <fa-icon [icon]="searchIcon"></fa-icon>
+            </button>
+            <button class="red-squared-btn mx-1" type="button" routerLink="about">
+                <fa-icon [icon]="infoIcon"></fa-icon>
+            </button>
         </div>
     </nav>
 </div>
