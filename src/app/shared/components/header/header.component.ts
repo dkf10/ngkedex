@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, IconDefinition } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faInfoCircle, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'ngkx-header',
@@ -10,11 +10,13 @@ export class HeaderComponent implements OnInit {
   
   public isCollapsed: boolean = true;
   public searchIcon: IconDefinition;
+  public infoIcon: IconDefinition;
 
   constructor() { }
 
   ngOnInit() {
     this.searchIcon = faSearch;
+    this.infoIcon = faInfoCircle;
   }
 
 }
