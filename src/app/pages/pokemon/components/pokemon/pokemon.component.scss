@@ -3,3 +3,14 @@
 .card {
     border-radius: 0 !important;
 }
+
+.infobox-title {
+    background: {
+        color: $ngkx-red;
+    }
+}
+
+.infobox-content {
+    border: 2px solid $ngkx-red;
+    border-top: 0;
+}
