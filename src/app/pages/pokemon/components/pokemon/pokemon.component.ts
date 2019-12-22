@@ -40,8 +40,8 @@ export class PokemonComponent implements OnInit {
     this.loadPokemon();
   }
 
-  private loadPokemon() {
-    this.pokemonService.getPokemonBase(this.pokemonId).then((response) => {
+  private async loadPokemon(): Promise<void> {
+    await this.pokemonService.getPokemonBase(this.pokemonId).then((response) => {
       if (response) {
         this.loadedPokemonBase = {
           baseExperience: response.base_experience,
@@ -61,9 +61,9 @@ export class PokemonComponent implements OnInit {
   }
 
 
-  private loadPokemonAbilities(abilities: any): void {
+  private async loadPokemonAbilities(abilities: any): Promise<void> {
     for (let i: number = 0; i < abilities.length; i++) {
-      this.pokemonService.getPokemonAbility(abilities[i].ability.url).then((resp) => {
+      await this.pokemonService.getPokemonAbility(abilities[i].ability.url).then((resp) => {
         if (resp) {
           resp.isHidden = abilities[i].is_hidden;
           this.loadedPokemonAbilities.push(resp);
@@ -72,8 +72,8 @@ export class PokemonComponent implements OnInit {
     }
   }
 
-  private loadPokemonSpecies(species: any): void {
-    this.pokemonService.getPokemonSpecies(species.url).then((resp) => {
+  private async loadPokemonSpecies(species: any): Promise<void> {
+    await this.pokemonService.getPokemonSpecies(species.url).then((resp) => {
       if (resp) {
         this.loadedPokemonSpecies = resp;
       }
@@ -94,11 +94,11 @@ export class PokemonComponent implements OnInit {
     }
   }
 
-  private loadPokemonTypes(types: any): void {
+  private async loadPokemonTypes(types: any): Promise<void> {
     for (let i: number = 0; i < types.length; i++) {
       let currType = types[i];
 
-      this.pokemonService.getPokemonType(currType.type.url).then((resp) => {
+      return this.pokemonService.getPokemonType(currType.type.url).then((resp) => {
         if (resp) {
           this.loadedPokemonTypes.push(resp);
         }
