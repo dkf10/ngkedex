@@ -22,8 +22,8 @@ export class PokedexComponent implements OnInit {
   public nextPgIcon: IconDefinition;
 
   constructor(
-    private pokedexService: PokedexService, 
-    private alertService: AlertService, 
+    private pokedexService: PokedexService,
+    private alertService: AlertService,
     private spinner: NgxSpinnerService
   ) {
     this.prevPgIcon = faAngleDoubleLeft;
@@ -40,19 +40,19 @@ export class PokedexComponent implements OnInit {
       let params = new HttpParams({
         fromString: this.nextPgUrl.split('?')[1]
       });
-      this.loadPokedex({params});
+      this.loadPokedex({ params });
     } else {
       let params = new HttpParams({
         fromString: this.prevPgUrl.split('?')[1]
       });
-      this.loadPokedex({params});
+      this.loadPokedex({ params });
     }
   }
 
   private loadPokedex(options?: any): void {
     this.spinner.show();
     this.pokedexService.getPokedex(options).then((response) => {
-      if(response) {
+      if (response) {
         this.pokemon = response.results;
         this.countedPokemon = response.count;
         this.nextPgUrl = response.next;
